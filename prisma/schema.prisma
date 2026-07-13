@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Doctor {
+  id            String      @id @default(cuid())
+  name          String
+  specialty     String      // e.g., "باطنة", "عظام"
+  contactDetails String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  schedules     Schedule[]
+  timeSheets    TimeSheet[]
+}
+
+model Schedule {
+  id            String   @id @default(cuid())
+  doctorId      String
+  doctor        Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  
+  dayOfWeek     Int      // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  startTime     String   // e.g., "14:00"
+  endTime       String   // e.g., "18:00"
+  roomNumber    String?
+  maxPatients   Int      @default(20)
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Indexes for faster lookups when the AI queries schedules
+  @@index([doctorId])
+  @@index([dayOfWeek])
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  EXCUSED
+}
+
+model TimeSheet {
+  id            String   @id @default(cuid())
+  doctorId      String
+  doctor        Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  
+  date          DateTime @db.Date
+  checkInTime   DateTime?
+  checkOutTime  DateTime?
+  status        AttendanceStatus @default(PRESENT)
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Ensures a doctor only has one timesheet record per specific day
+  @@unique([doctorId, date]) 
+  
+  // Indexes for fast dashboard filtering
+  @@index([doctorId])
+  @@index([date])
+}
