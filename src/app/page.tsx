@@ -64,7 +64,7 @@ export default function Home() {
           <div>
             <Link
               href="/dashboard"
-              className="border border-slate-dark/30 hover:border-slate-dark text-slate-dark hover:bg-slate-dark/5 text-xs font-bold px-4 py-2 rounded-full transition-all inline-flex items-center gap-1.5"
+              className="border border-slate-dark/30 hover:border-slate-dark text-slate-dark hover:bg-slate-dark/5 text-xs font-bold px-4 py-2 rounded-full transition-all inline-flex items-center gap-1.5 cursor-pointer"
             >
               <span>لوحة الاستقبال</span>
               <ArrowLeft className="w-3.5 h-3.5 text-slate-dark" />
@@ -127,7 +127,7 @@ export default function Home() {
             <div className="space-y-3 pt-2">
               <Link
                 href="/dashboard"
-                className="group flex h-11 sm:h-12 items-center justify-center gap-2.5 rounded-full border border-slate-dark/40 hover:border-slate-dark bg-white/70 hover:bg-white text-slate-dark font-bold px-6 text-xs sm:text-sm transition-all w-full text-center shadow-2xs hover:shadow-xs"
+                className="group flex h-11 sm:h-12 items-center justify-center gap-2.5 rounded-full border border-slate-dark/40 hover:border-slate-dark bg-white/70 hover:bg-white text-slate-dark font-bold px-6 text-xs sm:text-sm transition-all w-full text-center shadow-2xs hover:shadow-xs cursor-pointer"
               >
                 <span>الدخول للوحة الاستقبال</span>
                 <ArrowLeft className="w-4 h-4 text-slate-dark group-hover:-translate-x-1 transition-transform" />

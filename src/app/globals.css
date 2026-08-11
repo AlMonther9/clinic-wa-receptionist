@@ -60,6 +60,16 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Global Cursor Pointer Enforcement */
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select {
+  cursor: pointer;
+}
+
 /* Custom scrollbars matching the fresh baby blue clinic aesthetic */
 ::-webkit-scrollbar {
   width: 6px;
