@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Tajawal, Plus_Jakarta_Sans } from "next/font/google";
+import { Amiri, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const tajawal = Tajawal({
-  variable: "--font-tajawal",
+const amiri = Amiri({
+  variable: "--font-amiri",
   subsets: ["arabic"],
-  weight: ["300", "400", "500", "700", "900"],
+  weight: ["400", "700"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="ar"
-      className={`${tajawal.variable} ${plusJakartaSans.variable} h-full antialiased`}
+      className={`${amiri.variable} ${plusJakartaSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>

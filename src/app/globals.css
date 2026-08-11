@@ -1,18 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background-canvas: #F8FAFC;
-  --color-surface-card: #FFFFFF;
-  --color-primary-blue: #1E3A8A;
-  --color-primary-blue-hover: #1D4ED8;
-  --color-accent-cerulean: #0EA5E9;
+  --color-background-canvas: #F0F7FF;
+  --color-cream-card: #FFFFFF;
+  --color-cream-accent: #E0F2FE;
+  --color-cream-soft: #F0F9FF;
+  --color-mint-light: #E0F2FE;
+  --color-dark-emerald: #0369A1;
+  --color-slate-dark: #0F172A;
+  --color-primary-blue: #0284C7;
+  --color-primary-blue-hover: #0369A1;
+  --color-baby-blue: #38BDF8;
+  --color-baby-blue-dark: #0284C7;
+  --color-baby-blue-light: #E0F2FE;
   --color-text-base: #0F172A;
   --color-text-muted: #64748B;
   --color-border-precision: #E2E8F0;
 
-  --font-sans: var(--font-tajawal), var(--font-jakarta), sans-serif;
+  --font-sans: var(--font-amiri), var(--font-jakarta), serif;
 
-  --radius-lg: 0.5rem; /* 8px - crisp precision */
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
 
   --animate-spin-slow: spin-slow 25s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
@@ -31,13 +40,13 @@
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
   }
 }
 
 :root {
-  --background: #F8FAFC;
+  --background: #F0F7FF;
   --foreground: #0F172A;
 }
 
@@ -51,18 +60,18 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Custom scrollbars matching the clinical precision aesthetic */
+/* Custom scrollbars matching the fresh baby blue clinic aesthetic */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #F0F7FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E2E8F0;
+  background: #CBD5E1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748B;
+  background: #94A3B8;
 }
